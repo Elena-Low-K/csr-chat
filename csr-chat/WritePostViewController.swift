@@ -7,9 +7,43 @@
 //
 
 import UIKit
+import Firebase
 
 class WritePostViewController: UIViewController {
 
+    @IBAction func backToNewsfeed(_ sender: UIButton) {
+    CSRMethods.app.changeScreens(id: "newsfeed")
+    }
+    
+    @IBAction func goToHome(_ sender: UIButton) {
+        CSRMethods.app.changeScreens(id: "home")
+    }
+    
+    @IBOutlet weak var postTextView: UITextView!
+    
+    @IBAction func tryPost(_ sender: UIButton) {
+        let username = UserDefaults.standard.string(forKey: "username")
+        
+        ref = Database.database().reference().child("posts")
+        
+        let key = ref.childByAutoId().key
+        
+        post = self.postTextView.text!
+        
+        let newPost = [
+            key : username! + " : " + post! ]
+        
+        ref.updateChildValues(newPost)
+        
+        CSRMethods.app.changeScreens(id: "newsfeed")
+        
+        
+    }
+    
+    
+    var post: String!
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

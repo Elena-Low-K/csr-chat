@@ -7,17 +7,30 @@
 //
 
 import UIKit
+import Firebase
 
 class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var newsfeed: UITableView!
+    var posts: Array<String>!
     
-  
+    var ref: DatabaseReference!
+    
+    @IBAction func signOut(_ sender: UIButton) {
+        CSRMethods.app.changeScreens(id: "home")
+    }
+    
+    @IBAction func addPost(_ sender: UIButton) {
+        CSRMethods.app.changeScreens(id: "writepost")
+    }
+    
+    @IBOutlet weak var newsfeed: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        
+        
         // write code here -- return the number of cells in the table
-        return 1
+        return posts.count
     }
     
     
@@ -25,6 +38,13 @@ class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableView
         
         // write code here -- let's create our individual cells
         let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath)
+        
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.font = cell.textLabel?.font.withSize(30)
+        cell.textLabel?.textColor = UIColor.init(red: 125/255, green: 192/255, blue: 250/255, alpha: 1)
+        
+        cell.textLabel?.text = posts[indexPath.item]
+        
         return cell
 
     }
@@ -33,6 +53,24 @@ class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ref = Database.database().reference().child("posts")
+        
+        posts = []
+        
+        ref.observeSingleEvent(of: DataEventType.value, with: { (snapshot)
+            in
+            for currentPost in snapshot.children.allObjects as! [DataSnapshot] {
+            
+            let post = currentPost.value as! String
+            self.posts.append(post)
+        
+            }
+            
+            self.posts.reverse()
+            self.newsfeed.reloadData()
+        })
+        
+        
         // Do any additional setup after loading the view.
     }
     

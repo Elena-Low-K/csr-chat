@@ -14,7 +14,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func goToLogin(_ sender: Any) {
+        CSRMethods.app.changeScreens(id: "login")
+    }
 
-
+    @IBAction func goToSingUp(_ sender: Any) {
+        CSRMethods.app.changeScreens(id: "signup")
+    }
+    
 }
 
