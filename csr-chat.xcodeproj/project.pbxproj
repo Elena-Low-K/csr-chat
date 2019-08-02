@@ -23,6 +23,9 @@
 		D129C4B742E864F54054AD11 /* Pods_csr_chatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652C7F90F6422D3AFF5F04CE /* Pods_csr_chatUITests.framework */; };
 		D66052CDB36F4B0E5D1E5B0F /* Pods_csr_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F3BF46EEF3C53A667BEAA2 /* Pods_csr_chat.framework */; };
 		D815CB5122F212C700DCE5AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D815CB5022F212C700DCE5AE /* GoogleService-Info.plist */; };
+		D8E5025522F3C45A00B6D36D /* CSR-Chat_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E5025422F3C45900B6D36D /* CSR-Chat_logo.png */; };
+		D8E5025722F3C54A00B6D36D /* CSR-Chat_logo_png.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E5025622F3C54A00B6D36D /* CSR-Chat_logo_png.png */; };
+		D8E5025922F3C5A900B6D36D /* CSRlogo_png copy.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E5025822F3C5A900B6D36D /* CSRlogo_png copy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		B7896DA987ED5CA90EF9D890 /* Pods_csr_chatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_csr_chatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE47843628FE177E9D62E358 /* Pods-csr-chatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-csr-chatTests.debug.xcconfig"; path = "Target Support Files/Pods-csr-chatTests/Pods-csr-chatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D815CB5022F212C700DCE5AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8E5025422F3C45900B6D36D /* CSR-Chat_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSR-Chat_logo.png"; sourceTree = "<group>"; };
+		D8E5025622F3C54A00B6D36D /* CSR-Chat_logo_png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSR-Chat_logo_png.png"; sourceTree = "<group>"; };
+		D8E5025822F3C5A900B6D36D /* CSRlogo_png copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CSRlogo_png copy.png"; sourceTree = "<group>"; };
 		E5F3BF46EEF3C53A667BEAA2 /* Pods_csr_chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_csr_chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +135,9 @@
 				853C525A2296F57D00734C01 /* AppDelegate.swift */,
 				853C525C2296F57D00734C01 /* ViewController.swift */,
 				853C525E2296F57D00734C01 /* Main.storyboard */,
+				D8E5025822F3C5A900B6D36D /* CSRlogo_png copy.png */,
+				D8E5025622F3C54A00B6D36D /* CSR-Chat_logo_png.png */,
+				D8E5025422F3C45900B6D36D /* CSR-Chat_logo.png */,
 				853C52882296F61D00734C01 /* SignupViewController.swift */,
 				853C528A2296F63800734C01 /* LoginViewController.swift */,
 				853C528C2296F64900734C01 /* NewsfeedViewController.swift */,
@@ -291,10 +300,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E5025522F3C45A00B6D36D /* CSR-Chat_logo.png in Resources */,
 				853C52652296F58100734C01 /* LaunchScreen.storyboard in Resources */,
 				D815CB5122F212C700DCE5AE /* GoogleService-Info.plist in Resources */,
+				D8E5025922F3C5A900B6D36D /* CSRlogo_png copy.png in Resources */,
 				853C52622296F58100734C01 /* Assets.xcassets in Resources */,
 				853C52602296F57D00734C01 /* Main.storyboard in Resources */,
+				D8E5025722F3C54A00B6D36D /* CSR-Chat_logo_png.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
