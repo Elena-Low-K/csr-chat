@@ -35,6 +35,10 @@ class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "HH:mm:ss MM/dd/yyyy"
+        let formattedDate = format.string(from: date)
         
         // write code here -- let's create our individual cells
         let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath)
@@ -43,7 +47,7 @@ class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel?.font = cell.textLabel?.font.withSize(30)
         cell.textLabel?.textColor = UIColor.init(red: 125/255, green: 192/255, blue: 250/255, alpha: 1)
         
-        cell.textLabel?.text = posts[indexPath.item]
+        cell.textLabel?.text = formattedDate + " " + posts[indexPath.item]
         
         return cell
 

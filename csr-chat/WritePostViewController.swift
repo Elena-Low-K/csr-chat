@@ -22,6 +22,13 @@ class WritePostViewController: UIViewController {
     @IBOutlet weak var postTextView: UITextView!
     
     @IBAction func tryPost(_ sender: UIButton) {
+
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "HH:mm:ss MM/dd/yyyy"
+        let formattedDate = format.string(from: date)
+        
+        
         let username = UserDefaults.standard.string(forKey: "username")
         
         ref = Database.database().reference().child("posts")
@@ -31,7 +38,7 @@ class WritePostViewController: UIViewController {
         post = self.postTextView.text!
         
         let newPost = [
-            key : username! + " : " + post! ]
+            key : formattedDate + " " + username! + " : " + post! ]
         
         ref.updateChildValues(newPost)
         
