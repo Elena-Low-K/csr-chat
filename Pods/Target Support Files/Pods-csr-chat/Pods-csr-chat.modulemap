@@ -1,0 +1,6 @@
+framework module Pods_csr_chat {
+  umbrella header "Pods-csr-chat-umbrella.h"
+
+  export *
+  module * { export * }
+}
